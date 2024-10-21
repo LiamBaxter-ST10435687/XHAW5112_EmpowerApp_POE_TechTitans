@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button, Modal, TouchableOpacity, FlatList, StyleSheet, Image, TextInput, Alert } from 'react-native';
+import { View, Text, Button, Modal, TouchableOpacity, FlatList, StyleSheet, Image, TextInput, Alert, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Ionicons } from '@expo/vector-icons';
@@ -72,7 +72,7 @@ const FeesScreen = () => {
             return;
         }
 
-        Alert.alert("Purchase Successful", "Consultant Rrequested Successfully");
+        Alert.alert("Purchase Successful", "Consultant Requested Successfully");
         setSelectedCourses([]);
         setName('');
         setEmail('');
@@ -86,91 +86,96 @@ const FeesScreen = () => {
     };
 
     return (
-        <View style={styles.feesContainer}>
-            <View style={styles.header}>
-                <Image source={require('../_images/logo.png')} style={styles.logo} />
-                <Text style={styles.companyName}>Empowering the Nation</Text>
-                <TouchableOpacity
-                    style={styles.backButton}
-                    onPress={() => navigation.goBack()}
+        <ScrollView contentContainerStyle={styles.scrollViewContent}>
+            <View style={styles.feesContainer}>
+                <View style={styles.header}>
+                    <Image source={require('../_images/logo.png')} style={styles.logo} />
+                    <Text style={styles.companyName}>Empowering the Nation</Text>
+                    <TouchableOpacity
+                        style={styles.backButton}
+                        onPress={() => navigation.goBack()}
+                    >
+                        <Ionicons name="arrow-back" size={24} color="#000" />
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.separator} />
+                <View style={styles.imageContainer}>
+                    <Image source={require('../_images/fees/feesHero.jpg')} style={styles.mainImage} />
+                </View>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Name"
+                    value={name}
+                    onChangeText={setName}
+                />
+                <TextInput
+                    style={styles.input}
+                    placeholder="Email"
+                    value={email}
+                    onChangeText={setEmail}
+                    keyboardType="email-address"
+                />
+                <Button title="Select Courses" onPress={() => setModalVisible(true)} />
+                <Modal
+                    transparent={true}
+                    visible={modalVisible}
+                    animationType="slide"
+                    onRequestClose={() => setModalVisible(false)}
                 >
-                    <Ionicons name="arrow-back" size={24} color="#000" />
-                </TouchableOpacity>
-            </View>
-            <View style={styles.separator} />
-            <View style={styles.imageContainer}>
-                <Image source={require('../_images/fees/feesHero.jpg')} style={styles.mainImage} />
-            </View>
-            <TextInput
-                style={styles.input}
-                placeholder="Name"
-                value={name}
-                onChangeText={setName}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Email"
-                value={email}
-                onChangeText={setEmail}
-                keyboardType="email-address"
-            />
-            <Button title="Select Courses" onPress={() => setModalVisible(true)} />
-            <Modal
-                transparent={true}
-                visible={modalVisible}
-                animationType="slide"
-                onRequestClose={() => setModalVisible(false)}
-            >
-                <View style={styles.modalOverlay}>
-                    <View style={styles.modalContent}>
-                        <Text style={styles.modalTitle}>Select Courses</Text>
-                        <FlatList
-                            data={courses}
-                            keyExtractor={(item) => item.id}
-                            renderItem={({ item }) => (
-                                <TouchableOpacity
-                                    style={[styles.courseItem, selectedCourses.includes(item) && styles.selectedItem]}
-                                    onPress={() => toggleCourseSelection(item)}
-                                >
-                                    <Text style={styles.courseText}>{item.title}</Text>
-                                    <Text style={styles.coursePrice}>R{item.price}</Text>
-                                </TouchableOpacity>
-                            )}
-                        />
-                        <Button title="Done" onPress={() => setModalVisible(false)} />
+                    <View style={styles.modalOverlay}>
+                        <View style={styles.modalContent}>
+                            <Text style={styles.modalTitle}>Select Courses</Text>
+                            <FlatList
+                                data={courses}
+                                keyExtractor={(item) => item.id}
+                                renderItem={({ item }) => (
+                                    <TouchableOpacity
+                                        style={[styles.courseItem, selectedCourses.includes(item) && styles.selectedItem]}
+                                        onPress={() => toggleCourseSelection(item)}
+                                    >
+                                        <Text style={styles.courseText}>{item.title}</Text>
+                                        <Text style={styles.coursePrice}>R{item.price}</Text>
+                                    </TouchableOpacity>
+                                )}
+                            />
+                            <Button title="Done" onPress={() => setModalVisible(false)} />
+                        </View>
                     </View>
-                </View>
-            </Modal>
-            <Text style={styles.sectionTitle}>Selected Courses:</Text>
-            {selectedCourses.map((course, index) => (
-                <Text key={index} style={styles.selectedCourse}>{course.title} - R{course.price}</Text>
-            ))}
-            <Button
-                title="Calculate Total Fees"
-                onPress={() => {
-                    setTotalVisible(true);
-                }}
-                color="#8B4513"
-            />
-            {totalVisible && (
-                <View style={styles.totalContainer}>
-                    <Text style={styles.totalLabel}>Total Fee:</Text>
-                    <Text style={styles.totalValue}>R{calculateTotal()}</Text>
-                </View>
-            )}
-            <View style={[styles.buttonContainer, { marginTop: 10 }]}>
+                </Modal>
+                <Text style={styles.sectionTitle}>Selected Courses:</Text>
+                {selectedCourses.map((course, index) => (
+                    <Text key={index} style={styles.selectedCourse}>{course.title} - R{course.price}</Text>
+                ))}
                 <Button
-                    title="Submit Request"
-                    onPress={handlePurchase}
+                    title="Calculate Total Fees"
+                    onPress={() => {
+                        setTotalVisible(true);
+                    }}
                     color="#8B4513"
                 />
+                {totalVisible && (
+                    <View style={styles.totalContainer}>
+                        <Text style={styles.totalLabel}>Total Fee:</Text>
+                        <Text style={styles.totalValue}>R{calculateTotal()}</Text>
+                    </View>
+                )}
+                <View style={[styles.buttonContainer, { marginTop: 10 }]}>
+                    <Button
+                        title="Submit Request"
+                        onPress={handlePurchase}
+                        color="#8B4513"
+                    />
+                </View>
             </View>
-        </View>
+        </ScrollView>
     );
 };
 export default FeesScreen;
 
 const styles = StyleSheet.create({
+    scrollViewContent: {
+        flexGrow: 1,
+    },
     feesContainer: {
         flex: 1,
         backgroundColor: '#F5F5DC',
@@ -211,7 +216,7 @@ const styles = StyleSheet.create({
         height: 4,
         backgroundColor: '#ccc',
         marginVertical: 20,
-      },
+    },
     modalOverlay: {
         flex: 1,
         backgroundColor: 'rgba(0,0,0,0.5)',
@@ -284,5 +289,4 @@ const styles = StyleSheet.create({
     buttonContainer: {
         marginVertical: 5,
     },
-   
 });
