@@ -40,6 +40,7 @@ const SixMonthCourses: React.FC = () => {
           <Ionicons name="arrow-back" size={24} color="#000" />
         </TouchableOpacity>
       </View>
+      <View style={styles.separator} />
       <FlatList
         data={sixMonthCourses}
         renderItem={({ item }) => (
@@ -121,6 +122,12 @@ const styles = StyleSheet.create({
   footerText: {
     fontSize: 16,
     color: '#000',
+  },
+  separator: {
+    width: '100%',
+    height: 4,
+    backgroundColor: '#ccc',
+    marginVertical: 20,
   },
 });
 

@@ -21,7 +21,7 @@ const Enrol: React.FC = () => {
           <Ionicons name="arrow-back" size={24} color="#000" />
         </TouchableOpacity>
       </View>
-
+      <View style={styles.separator} />
 
       <Image source={image} style={styles.courseImage} />
       <Text style={styles.courseTitle}>{title}</Text>
@@ -46,12 +46,6 @@ const Enrol: React.FC = () => {
       >
         <Text style={styles.enrolButtonText}>Enrol</Text>
       </TouchableOpacity>
-
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>2024 Empowering the Nation</Text>
-        <Text style={styles.footerText}>Owners Email: MathhewM32@gmail.com</Text>
-        <Text style={styles.footerText}>Business Email: Empowering22@yahoo.co.za</Text>
-      </View>
     </View>
   );
 };
@@ -123,24 +117,11 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontWeight: 'bold',
   },
-  footer: {
-    width: '100%',
-    padding: 10,
-    backgroundColor: '#D3D3B2',
-    height: 90,
-    position: 'absolute',
-    bottom: 0,
-    alignItems: 'center',
-  },
-  footerText: {
-    fontSize: 16,
-    color: '#000',
-  },
   separator: {
-    height: 1,
     width: '100%',
-    backgroundColor: '#8B4513',
-    marginVertical: 10,
+    height: 4,
+    backgroundColor: '#ccc',
+    marginVertical: 20,
   },
 });
 

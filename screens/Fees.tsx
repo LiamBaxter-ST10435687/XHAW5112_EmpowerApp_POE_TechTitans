@@ -97,6 +97,7 @@ const FeesScreen = () => {
                     <Ionicons name="arrow-back" size={24} color="#000" />
                 </TouchableOpacity>
             </View>
+            <View style={styles.separator} />
             <View style={styles.imageContainer}>
                 <Image source={require('../_images/fees/feesHero.jpg')} style={styles.mainImage} />
             </View>
@@ -205,6 +206,12 @@ const styles = StyleSheet.create({
         height: 200,
         borderRadius: 10,
     },
+    separator: {
+        width: '100%',
+        height: 4,
+        backgroundColor: '#ccc',
+        marginVertical: 20,
+      },
     modalOverlay: {
         flex: 1,
         backgroundColor: 'rgba(0,0,0,0.5)',

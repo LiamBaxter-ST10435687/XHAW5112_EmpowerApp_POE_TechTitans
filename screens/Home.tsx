@@ -11,18 +11,18 @@ const Home: React.FC = () => {
 
   return (
     <View style={styles.container}>
-
       <View style={styles.header}>
         <Image source={require('../_images/logo.png')} style={styles.logo} />
         <Text style={styles.businessName}>Empowering the Nation</Text>
       </View>
-
-
+      <View style={styles.separator} />
       <Image source={require('../_images/home/hero.jpg')} style={styles.mainImage} />
-
 
       <View style={styles.separator} />
 
+      <Text style={styles.headingText}>Online Courses Brought to You</Text>
+
+      <View style={styles.separator} />
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.buttonWrapper} onPress={() => navigation.navigate('Month')}>
@@ -38,7 +38,6 @@ const Home: React.FC = () => {
           <Text style={styles.buttonText}>Fees</Text>
         </TouchableOpacity>
       </View>
-
 
       <View style={styles.footer}>
         <Text style={styles.footerText}>2024 Empowering the Nation</Text>
@@ -81,17 +80,24 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   separator: {
-    width: '90%',
+    width: '100%',
     height: 4,
     backgroundColor: '#ccc',
     marginVertical: 20,
+  },
+  headingText: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#8B4513',
+    textAlign: 'center',
+    marginBottom: 10,
   },
   buttonContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
     width: '80%',
-    marginTop: 50,
+    marginTop: 20,
     alignItems: 'center',
   },
   buttonWrapper: {

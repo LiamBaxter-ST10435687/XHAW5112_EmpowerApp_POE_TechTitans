@@ -8,9 +8,9 @@ import { Ionicons } from '@expo/vector-icons';
 type SixWeekCoursesScreenProp = NativeStackNavigationProp<RootStackParams, 'Week'>;
 
 const sixWeekCourses = [
-  { id: '1', title: 'Child Minding', price: 'R750', image: require('../_images/child.jpg'), description: '', lessonPlan: 'Lesson 1: Birth to six-month old baby needs, Lesson 2: seven-month to one year old needs, Lesson 3: Toddler needs, Lesson 4: Educational Toys ' },
-  { id: '2', title: 'Cooking', price: 'R750', image: require('../_images/cooking.jpg'), description: '', lessonPlan: 'Lesson 1: Nutritional requirements for a healthy body, Lesson 2: Types of protein, carbohydrates and vegetables, Lesson 3: Planning meals, Lesson 4: Preparation and cooking of meals' },
-  { id: '3', title: 'Garden Maintenance', price: 'R750', image: require('../_images/garden.jpg'), description: '', lessonPlan: 'Lesson 1: Water restrictions and the watering requirements of indigenous and exotic plants, Lesson 2: Pruning and propagation of plants, Lesson 3: Planting techniques for different plant types' },
+  { id: '1', title: 'Child Minding', price: 'R750', image: require('../_images/child.jpg'), description: 'To provide basic child and baby care ', lessonPlan: 'Lesson 1: Birth to six-month old baby needs, Lesson 2: seven-month to one year old needs, Lesson 3: Toddler needs, Lesson 4: Educational Toys ' },
+  { id: '2', title: 'Cooking', price: 'R750', image: require('../_images/cooking.jpg'), description: 'To prepare and cook nutritious family meals', lessonPlan: 'Lesson 1: Nutritional requirements for a healthy body, Lesson 2: Types of protein, carbohydrates and vegetables, Lesson 3: Planning meals, Lesson 4: Preparation and cooking of meals' },
+  { id: '3', title: 'Garden Maintenance', price: 'R750', image: require('../_images/garden.jpg'), description: 'To provide basic knowledge of watering, pruning and planting in a domestic garden.', lessonPlan: 'Lesson 1: Water restrictions and the watering requirements of indigenous and exotic plants, Lesson 2: Pruning and propagation of plants, Lesson 3: Planting techniques for different plant types' },
 ];
 
 const SixWeekCourses: React.FC = () => {
@@ -36,7 +36,7 @@ const SixWeekCourses: React.FC = () => {
           <Ionicons name="arrow-back" size={24} color="#000" />
         </TouchableOpacity>
       </View>
-
+      <View style={styles.separator} />
       <FlatList
         data={sixWeekCourses}
         renderItem={({ item }) => (
@@ -119,6 +119,12 @@ const styles = StyleSheet.create({
   footerText: {
     fontSize: 16,
     color: '#000',
+  },
+  separator: {
+    width: '100%',
+    height: 4,
+    backgroundColor: '#ccc',
+    marginVertical: 20,
   },
 });
 

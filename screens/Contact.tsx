@@ -50,6 +50,7 @@ const ContactUsScreen = () => {
                     <Ionicons name="arrow-back" size={24} color="#000" />
                 </TouchableOpacity>
             </View>
+            <View style={styles.separator} />
             <View style={styles.imageContainer}>
                 <Image source={require('../_images/contact/contact.jpg')} style={styles.mainImage} />
             </View>
@@ -148,11 +149,11 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     separator: {
-        height: 1,
+        width: '100%',
+        height: 4,
         backgroundColor: '#ccc',
         marginVertical: 20,
-        width: '100%',
-    },
+      },
     backButton: {
         padding: 10,
     },
