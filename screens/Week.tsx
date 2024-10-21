@@ -8,9 +8,9 @@ import { Ionicons } from '@expo/vector-icons';
 type SixWeekCoursesScreenProp = NativeStackNavigationProp<RootStackParams, 'Week'>;
 
 const sixWeekCourses = [
-  { id: '1', title: 'Child Minding', price: 'R750', image: require('../_images/child.jpg'), description: 'In depth course on how to care for children. You will be learing everything there is to know about child care.', lessonPlan: 'Lesson 1: How to change a diaper' },
-  { id: '2', title: 'Cooking', price: 'R750', image: require('../_images/cooking.jpg'), description: 'In depth course on how to create culinary masterpieces. You will be learning every cooking technique known to man.', lessonPlan: 'Lesson 1: Proper knife etiquette' },
-  { id: '3', title: 'Garden Maintenance', price: 'R750', image: require('../_images/garden.jpg'), description: 'In depth course on how to create beautiful gardens. You will be learing how to create and maintain gardens.', lessonPlan: 'Lesson 1: Pruning 101' },
+  { id: '1', title: 'Child Minding', price: 'R750', image: require('../_images/child.jpg'), description: '', lessonPlan: 'Lesson 1: Birth to six-month old baby needs, Lesson 2: seven-month to one year old needs, Lesson 3: Toddler needs, Lesson 4: Educational Toys ' },
+  { id: '2', title: 'Cooking', price: 'R750', image: require('../_images/cooking.jpg'), description: '', lessonPlan: 'Lesson 1: Nutritional requirements for a healthy body, Lesson 2: Types of protein, carbohydrates and vegetables, Lesson 3: Planning meals, Lesson 4: Preparation and cooking of meals' },
+  { id: '3', title: 'Garden Maintenance', price: 'R750', image: require('../_images/garden.jpg'), description: '', lessonPlan: 'Lesson 1: Water restrictions and the watering requirements of indigenous and exotic plants, Lesson 2: Pruning and propagation of plants, Lesson 3: Planting techniques for different plant types' },
 ];
 
 const SixWeekCourses: React.FC = () => {

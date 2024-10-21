@@ -1,7 +1,9 @@
-import React from 'react';
-import { View, Text, Image, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Image, StyleSheet, FlatList, ScrollView, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import MapView, { Marker } from 'react-native-maps';
+import RNPickerSelect from 'react-native-picker-select';
 
 const ContactUsScreen = () => {
     const navigation = useNavigation();
@@ -10,13 +12,37 @@ const ContactUsScreen = () => {
         { id: '1', label: 'Line 1', value: '123-456-7890' },
         { id: '2', label: 'Line 2', value: '098-765-4321' },
         { id: '3', label: 'Line 3', value: '555-555-5555' },
-        { id: '4', label: 'Address', value: '123 Main St, City, Country' },
-        { id: '5', label: 'Email', value: 'info@example.com' },
-        { id: '6', label: 'Website', value: 'www.example.com' },
     ];
 
+    const [selectedAddress, setSelectedAddress] = useState('27 Commissioner Street');
+    const [region, setRegion] = useState({
+        latitude: -26.2041,
+        longitude: 28.0473,
+        latitudeDelta: 0.01,
+        longitudeDelta: 0.01,
+    });
+
+    const handleAddressChange = (address: string) => {
+        setSelectedAddress(address);
+        let newRegion;
+        switch (address) {
+            case '27 Commissioner Street':
+                newRegion = { latitude: -26.2041, longitude: 28.0473, latitudeDelta: 0.01, longitudeDelta: 0.01 };
+                break;
+            case '27 Jan Smuts Avenue':
+                newRegion = { latitude: -26.1461, longitude: 28.0328, latitudeDelta: 0.01, longitudeDelta: 0.01 };
+                break;
+            case 'Louis Botha Avenue':
+                newRegion = { latitude: -26.1711, longitude: 28.0740, latitudeDelta: 0.01, longitudeDelta: 0.01 };
+                break;
+            default:
+                newRegion = region;
+        }
+        setRegion(newRegion);
+    };
+
     return (
-        <View style={styles.contactContainer}>
+        <ScrollView style={styles.contactContainer}>
             <View style={styles.header}>
                 <Image source={require('../_images/logo.png')} style={styles.logo} />
                 <Text style={styles.businessName}>Empowering the Nation</Text>
@@ -38,13 +64,29 @@ const ContactUsScreen = () => {
                     </View>
                 )}
             />
-            <View style={styles.footer}>
-                <Text style={styles.footerText}>2024 Empowering the Nation</Text>
-                <Text style={styles.footerText}>Owners Email: MathhewM32@gmail.com </Text>
-                <Text style={styles.footerText}>Business Email:
-                    Empowering22@yahoo.co.za</Text>
-            </View>
-        </View>
+            <View style={styles.separator} />
+
+          
+            <RNPickerSelect
+                onValueChange={(value) => handleAddressChange(value)}
+                items={[
+                    { label: '27 Commissioner Street', value: '27 Commissioner Street' },
+                    { label: '27 Jan Smuts Avenue', value: '27 Jan Smuts Avenue' },
+                    { label: 'Louis Botha Avenue', value: 'Louis Botha Avenue' },
+                ]}
+                style={pickerSelectStyles}
+                value={selectedAddress}
+                placeholder={{}}
+            />
+
+           
+            <MapView
+                style={styles.map}
+                region={region}
+            >
+                <Marker coordinate={{ latitude: region.latitude, longitude: region.longitude }} />
+            </MapView>
+        </ScrollView>
     );
 };
 
@@ -114,18 +156,35 @@ const styles = StyleSheet.create({
     backButton: {
         padding: 10,
     },
-    footer: {
+    map: {
         width: '100%',
-        padding: 10,
-        backgroundColor: '#D3D3B2',
-        height: 90,
-        position: 'absolute',
-        bottom: 0,
-        alignItems: 'center',
+        height: 250,
+        marginBottom: 30,
     },
-    footerText: {
+});
+
+const pickerSelectStyles = StyleSheet.create({
+    inputIOS: {
         fontSize: 16,
-        color: '#000',
+        paddingVertical: 12,
+        paddingHorizontal: 10,
+        borderWidth: 1,
+        borderColor: '#8B4513',
+        borderRadius: 8,
+        color: 'black',
+        paddingRight: 30,
+        marginBottom: 20,
+    },
+    inputAndroid: {
+        fontSize: 16,
+        paddingVertical: 8,
+        paddingHorizontal: 10,
+        borderWidth: 1,
+        borderColor: '#8B4513',
+        borderRadius: 8,
+        color: 'black',
+        paddingRight: 30,
+        marginBottom: 20,
     },
 });
 

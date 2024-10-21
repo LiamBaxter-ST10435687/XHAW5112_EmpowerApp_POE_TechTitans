@@ -2,8 +2,7 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { RouteProp, useRoute, useNavigation, NavigationProp } from '@react-navigation/native';
 import { RootStackParams } from './RootStackParams';
-import { Ionicons } from '@expo/vector-icons'; // Import Ionicons for the back button
-
+import { Ionicons } from '@expo/vector-icons'; 
 type EnrolScreenRouteProp = RouteProp<RootStackParams, 'Enrol'>;
 
 const Enrol: React.FC = () => {
@@ -13,34 +12,34 @@ const Enrol: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      {/* Header Section */}
+
       <View style={styles.header}>
         <Image source={require('../_images/logo.png')} style={styles.logo} />
         <Text style={styles.companyName}>Empowering the Nation</Text>
-        {/* Back Button */}
+
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
           <Ionicons name="arrow-back" size={24} color="#000" />
         </TouchableOpacity>
       </View>
 
-      {/* Course Image */}
+
       <Image source={image} style={styles.courseImage} />
       <Text style={styles.courseTitle}>{title}</Text>
       <Text style={styles.coursePrice}>{price}</Text>
 
-      {/* Separator */}
+
       <View style={styles.separator} />
 
-      {/* Course Description */}
+
       <Text style={styles.courseDescription}>{description}</Text>
 
-      {/* Separator */}
+
       <View style={styles.separator} />
 
-      {/* Lesson Plan */}
+
       <Text style={styles.courseLessonPlan}>{lessonPlan}</Text>
 
-      {/* Customized Enrol Button */}
+
       <TouchableOpacity
         style={styles.enrolButton}
         onPress={() => navigation.navigate('Fees')}
@@ -113,14 +112,14 @@ const styles = StyleSheet.create({
   },
   enrolButton: {
     backgroundColor: '#8B4513',
-    paddingVertical: 15, // Increase vertical padding
-    paddingHorizontal: 30, // Increase horizontal padding
+    paddingVertical: 15,
+    paddingHorizontal: 30,
     borderRadius: 5,
     alignItems: 'center',
-    marginBottom: 20, // Optional: add space below the button
+    marginBottom: 20,
   },
   enrolButtonText: {
-    fontSize: 18, // Increase text size
+    fontSize: 18,
     color: '#FFF',
     fontWeight: 'bold',
   },
@@ -141,7 +140,7 @@ const styles = StyleSheet.create({
     height: 1,
     width: '100%',
     backgroundColor: '#8B4513',
-    marginVertical: 10, 
+    marginVertical: 10,
   },
 });
 

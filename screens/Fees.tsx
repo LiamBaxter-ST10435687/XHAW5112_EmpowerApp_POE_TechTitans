@@ -72,7 +72,7 @@ const FeesScreen = () => {
             return;
         }
 
-        Alert.alert("Purchase Successful", "Your courses have been purchased.");
+        Alert.alert("Purchase Successful", "Consultant Rrequested Successfully");
         setSelectedCourses([]);
         setName('');
         setEmail('');
@@ -159,7 +159,7 @@ const FeesScreen = () => {
             )}
             <View style={[styles.buttonContainer, { marginTop: 10 }]}>
                 <Button
-                    title="Purchase"
+                    title="Submit Request"
                     onPress={handlePurchase}
                     color="#8B4513"
                 />
