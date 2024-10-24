@@ -29,7 +29,7 @@ const ContactUsScreen = () => {
             case '27 Commissioner Street':
                 newRegion = { latitude: -26.2041, longitude: 28.0473, latitudeDelta: 0.01, longitudeDelta: 0.01 };
                 break;
-            case '27 Jan Smuts Avenue':
+            case '3 Jan Smuts Avenue':
                 newRegion = { latitude: -26.1461, longitude: 28.0328, latitudeDelta: 0.01, longitudeDelta: 0.01 };
                 break;
             case 'Louis Botha Avenue':
