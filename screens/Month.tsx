@@ -56,8 +56,7 @@ const SixMonthCourses: React.FC = () => {
       <View style={styles.footer}>
         <Text style={styles.footerText}>2024 Empowering the Nation</Text>
         <Text style={styles.footerText}>Owners Email: MathhewM32@gmail.com </Text>
-        <Text style={styles.footerText}>Business Email:
-          Empowering22@yahoo.co.za</Text>
+        <Text style={styles.footerText}>Business Email: Empowering22@yahoo.co.za</Text>
       </View>
     </View>
   );
