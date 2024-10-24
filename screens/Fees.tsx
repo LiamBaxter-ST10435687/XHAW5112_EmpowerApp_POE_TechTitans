@@ -151,7 +151,7 @@ const FeesScreen = () => {
                     onPress={() => {
                         setTotalVisible(true);
                     }}
-                    color="#8B4513"
+                    color="#39394c"
                 />
                 {totalVisible && (
                     <View style={styles.totalContainer}>
@@ -163,7 +163,7 @@ const FeesScreen = () => {
                     <Button
                         title="Submit Request"
                         onPress={handlePurchase}
-                        color="#8B4513"
+                        color="#39394c"
                     />
                 </View>
             </View>
