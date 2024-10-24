@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   enrolButton: {
-    backgroundColor: '#8B4513',
+    backgroundColor: '#39394c',
     paddingVertical: 15,
     paddingHorizontal: 30,
     borderRadius: 5,
