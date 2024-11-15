@@ -23,6 +23,10 @@ Step 10: On the Fees screen, input your name and email in the provided fields. S
 Step 11: Verify all functionalities by testing the navigation, form submissions, and course selection process to ensure the application works as expected.
 
 
+Visual walkthrough of the mobile app YouTube link: https://youtu.be/S8SamVk-zZI
+
+
+
 
 
 
