@@ -1,72 +1,26 @@
-This application was designed and developed to meet the company's request for a simple, engaging, and user-friendly experience that aligns with the overarching goal of "Empowering the Nation." The application focuses on intuitive navigation and streamlined functionality to ensure accessibility and usability for all users.
-
-Home Page:
-The Home page serves as the main navigation hub with four self-explanatory buttons:
-
-Six Month Courses
-Six Week Courses
-Contact Us
-Fees
-Each button redirects users to its respective screen, ensuring smooth navigation.
-
-Six Month and Six Week Courses Screens:
-
-Both screens feature a card structure layout for course items.
-Selecting a course card navigates users to the Enroll screen for that specific course.
-Users can return to the previous screen by tapping the back arrow located on the top right of the screen.
-Enroll Screen:
-
-Displays detailed information about the selected course.
-Includes an Enroll button that redirects users to the Fees screen.
-Contact Us Screen:
-
-Provides users with three contact numbers for support.
-Includes a Map Feature where users can select a location (Cape Town, Durban, or Johannesburg) from a dropdown. The map updates dynamically to display the selected location.
-Fees Screen:
-
-Features a form for users to input financial information:
-Name
-Email
-Selected Courses: Users select one or multiple courses using a modal. The selected courses are displayed in a field below.
-The app calculates the total course fee automatically.
-Includes a Submit a Request button for requesting a consultant.
-
-Application Name: Empowering the Nation App
-Description:
-This application is designed to provide an engaging and user-friendly experience for users exploring and enrolling in courses. It includes features to enhance accessibility and ensure a smooth user journey through its streamlined navigation.
-
 Steps to Use the Application
-Home Page
 
-Open the app to land on the Home page.
-Four buttons are displayed:
-Six Month Courses: Tap to view six-month course options.
-Six Week Courses: Tap to view six-week course options.
-Contact Us: Tap to access contact numbers and map locations.
-Fees: Tap to open the fees form for financial details and course selections.
-Six Month and Six Week Courses Screens
+Step 1: Open the GitHub repository link provided.
 
-Tap on a course card to view detailed information.
-Navigate to the Enroll Screen for the selected course.
-Use the back arrow in the top-right corner to return to the Home page.
-Enroll Screen
+Step 2: Click on the "Code" button and select "Download ZIP."
 
-View detailed course information.
-Tap the Enroll button to proceed to the Fees screen.
-Contact Us Screen
+Step 3: Unzip the downloaded folder to your computer.
 
-View the three contact numbers for support.
-Use the dropdown menu to select a location (Cape Town, Durban, or Johannesburg).
-The map updates dynamically to show the selected location.
-Fees Screen
+Step 4: Open the unzipped folder in your preferred code editor, such as Visual Studio Code.
 
-Fill in your Name and Email in the provided fields.
-Tap the Select Courses field to open a modal and choose one or multiple courses.
-View the selected courses displayed in the field below.
-The app automatically calculates the total course fee based on your selection.
-Tap the Submit a Request button to request a consultant.
-Follow these steps to navigate the app and utilize all features effectively.
+Step 5: Start the application by running the appropriate command in the terminal, such as npm start or yarn start. Open your browser and navigate to http://localhost:3000 if required.
 
+Step 6: Navigate through the application starting with the Home Page. The Home Page displays four buttons: Six Month Courses, Six Week Courses, Contact Us, and Fees. Select any button to proceed.
+
+Step 7: On the Six Month or Six Week Courses screens, select a course card to navigate to the Enroll screen. If you need to return, tap the back arrow located at the top-right corner of the screen.
+
+Step 8: On the Enroll screen, view the course details. Tap the Enroll button to move to the Fees screen.
+
+Step 9: Navigate to the Contact Us screen by selecting the corresponding button on the Home Page. Here, view the three contact numbers and select a location (Cape Town, Durban, or Johannesburg) from the dropdown menu to update the map accordingly.
+
+Step 10: On the Fees screen, input your name and email in the provided fields. Select one or multiple courses using the modal that appears when tapping the Select Courses field. The selected courses will display below, and the total course fee will be calculated automatically. Once complete, press the Submit a Request button to finalize your application.
+
+Step 11: Verify all functionalities by testing the navigation, form submissions, and course selection process to ensure the application works as expected.
 
 
 
